@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from '../Button/Button'
 import classes from './Header.module.css'
-import logo from '../../assets/Icons/clipboardOutlined.svg'
+import logo from '../../../assets/Icons/clipboardOutlined.svg'
 import Typography from '../Typography/Typography'
 
 const Header = () => {

@@ -1,5 +1,6 @@
 import React from 'react'
-import Header from '../components/Header/Header'
+import Header from '../components/UI/Header/Header'
+import BioPage from './BioPage'
 
 const MainPage = () => {
   return (
@@ -7,6 +8,7 @@ const MainPage = () => {
         {/* Header */}
         <Header />
         {/* Bio */}
+        <BioPage />
         {/* NavBar */}
         {/* Education / Work Exp / Achievements */}
     </>
