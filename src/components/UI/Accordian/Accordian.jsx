@@ -5,10 +5,13 @@ import arrowopen from "../../../assets/Icons/CaretDownFilled.svg";
 import arrowclose from "../../../assets/Icons/caretRightFilled.svg";
 import Typography from "../Typography/Typography";
 
-const Accordian = ({ children, type, id, title, period }) => {
-  const [toggle, setToggle] = useState(true);
+const Accordian = ({ tabValue, item }) => {
+  const [toggle, setToggle] = useState(false);
+  const { title, subtitle, startDate, endDate, description } = item;
+  const period = startDate.concat(endDate ? `\t-\t${endDate}` : "");
+
   return (
-    <div className={classes.accordian} key={id}>
+    <div className={classes.accordian}>
       <button
         className={classes.accordian_btn}
         onClick={() => {
@@ -16,14 +19,13 @@ const Accordian = ({ children, type, id, title, period }) => {
         }}
       >
         <div className={classes.accordian_arrow}>
-          {toggle && (
+          {toggle ? (
             <img
               src={arrowopen}
               alt={"arrowopen"}
               className={classes.accordian_arrow_open}
             />
-          )}
-          {!toggle && (
+          ) : (
             <img
               src={arrowclose}
               alt={"arrowclose"}
@@ -38,7 +40,47 @@ const Accordian = ({ children, type, id, title, period }) => {
           </div>
         </div>
       </button>
-      <div className={classes.accordian_content}>{toggle && children}</div>
+      <div className={classes.accordian_content}>
+        {toggle && (
+          <div className={classes.info_card_body}>
+            {tabValue !== "achievements" && (
+              <div className={classes.info_1}>
+                <div className={classes.info_1_label}>
+                  <Typography variant={"h6"}>
+                    {tabValue === "education"
+                      ? "Degree"
+                      : tabValue === "workExperiences"
+                      ? "Role"
+                      : null}
+                  </Typography>
+                </div>
+                <Typography variant={"h4"} color={"slowBlack"}>
+                  {subtitle}
+                </Typography>
+              </div>
+            )}
+            <div className={classes.info_2}>
+              <div className={classes.info_2_label}>
+                <Typography variant={"h6"}>Description</Typography>
+              </div>
+              <Typography variant={"subtitle"}>{description}</Typography>
+            </div>
+            <div className={classes.info_card_opts}>
+              <Button variant={"outlined"} color={"darkGrey"}>
+                <Typography variant={"h4"} color={"mediumBlack"}>
+                  Edit
+                </Typography>
+              </Button>
+
+              <Button variant={"outlined"} color={"darkGrey"}>
+                <Typography variant={"h4"} color={"mediumBlack"}>
+                  Delete
+                </Typography>
+              </Button>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

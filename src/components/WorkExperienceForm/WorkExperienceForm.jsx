@@ -1,14 +1,10 @@
 import React from "react";
-import Button from "../../UI/Button/Button";
-import InputField from "../../UI/InputField/InputField";
-import Typography from "../../UI/Typography/Typography";
-import classes from "./AchievementsForm.module.css";
+import Button from "../UI/Button/Button";
+import InputField from "../UI/InputField/InputField";
+import Typography from "../UI/Typography/Typography";
+import classes from "./WorkExperienceForm.module.css";
 
-const AchievementsForm = ({ children, closeForm }) => {
-  const closeFormHandler = () => {
-    closeForm(false);
-  };
-
+const WorkExperienceForm = ({ closeForm }) => {
   return (
     <div className={classes.form}>
       <form>
@@ -18,20 +14,38 @@ const AchievementsForm = ({ children, closeForm }) => {
           </div>
           <div className={classes.input_1}>
             <InputField
-              htmlFor={"title"}
-              id={"title"}
-              name={"title"}
-              label={"Title"}
+              htmlFor={"company"}
+              id={"company"}
+              name={"company"}
+              label={"Company"}
               type={"text"}
               width={"100%"}
             />
           </div>
           <div className={classes.input_2}>
             <InputField
-              htmlFor={"date"}
-              id={"date"}
-              name={"date"}
-              label={"Date"}
+              htmlFor={"role"}
+              id={"role"}
+              name={"role"}
+              label={"Role"}
+              type={"text"}
+              width={"100%"}
+            />
+          </div>
+          <div className={classes.input_34}>
+            <InputField
+              htmlFor={"startDate"}
+              id={"startDate"}
+              name={"startDate"}
+              label={"Start Date"}
+              type={"datetime-local"}
+              width={"100%"}
+            />
+            <InputField
+              htmlFor={"endDate"}
+              id={"endDate"}
+              name={"endDate"}
+              label={"End Date"}
               type={"datetime-local"}
               width={"100%"}
             />
@@ -52,11 +66,7 @@ const AchievementsForm = ({ children, closeForm }) => {
                 Save
               </Typography>
             </Button>
-            <Button
-              variant={"outlined"}
-              color={"darkGrey"}
-              onClick={closeFormHandler}
-            >
+            <Button variant={"outlined"} color={"darkGrey"} onClick={closeForm}>
               <Typography variant={"h4"} color={"mediumBlack"}>
                 Cancel
               </Typography>
@@ -68,4 +78,4 @@ const AchievementsForm = ({ children, closeForm }) => {
   );
 };
 
-export default AchievementsForm;
+export default WorkExperienceForm;

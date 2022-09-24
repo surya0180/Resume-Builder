@@ -1,22 +1,16 @@
-const initState = [
-  {
-    id: "",
-    institute: "",
-    degree: "",
-    startDate: "",
-    endDate: "",
-    description: "",
-  },
-];
+const initState = [];
 
 const educationReducer = (state = initState, action) => {
-  if (action.type === "ADD") {
+  switch (action.type) {
+    case "ADD":
+      return;
+    case "UPDATE":
+      return;
+    case "REMOVE":
+      return;
+    default:
+      return state;
   }
-  if (action.type === "UPDATE") {
-  }
-  if (action.type === "REMOVE") {
-  }
-  return state;
 };
 
 export default educationReducer;

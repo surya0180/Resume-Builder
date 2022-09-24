@@ -1,13 +1,10 @@
 import React from "react";
-import Button from "../../UI/Button/Button";
-import InputField from "../../UI/InputField/InputField";
-import Typography from "../../UI/Typography/Typography";
+import Button from "../UI/Button/Button";
+import InputField from "../UI/InputField/InputField";
+import Typography from "../UI/Typography/Typography";
 import classes from "./EducationForm.module.css";
 
-const EducationForm = ({ children, closeForm }) => {
-  const closeFormHandler = () => {
-    closeForm(false);
-  };
+const EducationForm = ({ closeForm }) => {
   return (
     <div className={classes.form}>
       <form>
@@ -69,11 +66,7 @@ const EducationForm = ({ children, closeForm }) => {
                 Save
               </Typography>
             </Button>
-            <Button
-              variant={"outlined"}
-              color={"darkGrey"}
-              onClick={closeFormHandler}
-            >
+            <Button variant={"outlined"} color={"darkGrey"} onClick={closeForm}>
               <Typography variant={"h4"} color={"mediumBlack"}>
                 Cancel
               </Typography>

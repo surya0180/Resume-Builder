@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import BioDetails from "../components/Content/BioDetails/BioDetails";
-import BioForm from "../components/Forms/BioForm/BioForm";
+import BioDetails from "../components/BioDetails/BioDetails";
+import BioForm from "../components/BioForm";
 
 const BioPage = () => {
   const [toggle, setToggle] = useState(false);

@@ -8,6 +8,7 @@ const InputField = ({
   name,
   label,
   type,
+  onChange,
   width = "",
 }) => {
   return (
@@ -22,6 +23,7 @@ const InputField = ({
           type={type}
           className={classes.input_box}
           style={{ width }}
+          onChange={onChange}
         />
       )}
       {type === "textarea" && (
@@ -31,6 +33,7 @@ const InputField = ({
           rows={6}
           className={classes.input_box}
           style={{ width }}
+          onChange={onChange}
         ></textarea>
       )}
     </div>

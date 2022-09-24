@@ -1,8 +1,8 @@
 import React from "react";
 import classes from "./BioDetails.module.css";
-import avatar from "../../../assets/Icons/Challen.png";
-import Typography from "../../UI/Typography/Typography";
-import Button from "../../UI/Button/Button";
+import avatar from "../../assets/Icons/Challen.png";
+import Typography from "../UI/Typography/Typography";
+import Button from "../UI/Button/Button";
 
 const BioDetails = ({ setToggle }) => {
   return (

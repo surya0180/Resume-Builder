@@ -49,3 +49,35 @@
 
 .accordian_close {
 }
+
+.info_cards {
+  width: 100%;
+}
+
+.info_card_body {
+  padding: 1em 2.5em;
+  border: 1px solid var(--darkGrey);
+  border-top: 0px;
+}
+
+.info_1 {
+  margin: 0.7em 0;
+}
+
+.info_2 {
+  margin: 0.7em 0;
+}
+
+.info_1_label {
+  margin: 0.5em 0;
+}
+
+.info_2_label {
+  margin: 1.5em 0 0.7em 0;
+}
+
+.info_card_opts {
+  display: flex;
+  justify-content: flex-start;
+  margin: 1.5em 0 1em 0;
+}

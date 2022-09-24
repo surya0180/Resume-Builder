@@ -1,22 +1,14 @@
 import React, { useState } from "react";
-import AchievementsInfo from "../components/Content/Information/AchievementsInfo";
-import EducationInfo from "../components/Content/Information/EducationInfo";
-import WorkExperiencesInfo from "../components/Content/Information/WorkExperiencesInfo";
-import NavBar from "../components/Content/NavBar/NavBar";
-import InfoTypes from "../utils/InfoTypes.json";
+import Tabs from "../components/Tabs/Tabs";
+import Section from "../components/Section/Section";
+import { tabItems } from "../constants/tabItems";
 
 const InfoPage = () => {
-  const [infoType, setInfoType] = useState(InfoTypes[0].name);
+  const [tabValue, setTabValue] = useState(tabItems[0].key);
   return (
     <>
-      <NavBar
-        InfoTypes={InfoTypes}
-        currentInfoType={infoType}
-        setInfoType={setInfoType}
-      />
-      {infoType === "Education" && <EducationInfo />}
-      {infoType === "Work Experience" && <WorkExperiencesInfo />}
-      {infoType === "Achievements" && <AchievementsInfo />}
+      <Tabs tabItems={tabItems} tabValue={tabValue} setTabValue={setTabValue} />
+      <Section tabValue={tabValue} />;
     </>
   );
 };

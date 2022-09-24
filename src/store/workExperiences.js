@@ -1,6 +1,6 @@
 const initState = [];
 
-const achievementsReducer = (state = initState, action) => {
+const workExperienceReducer = (state = initState, action) => {
   switch (action.type) {
     case "ADD":
       return;
@@ -13,4 +13,4 @@ const achievementsReducer = (state = initState, action) => {
   }
 };
 
-export default achievementsReducer;
+export default workExperienceReducer;

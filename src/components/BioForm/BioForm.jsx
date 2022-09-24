@@ -1,9 +1,9 @@
 import React from "react";
 import classes from "./BioForm.module.css";
-import upload from "../../../assets/Icons/UploadOutlined.svg";
-import Typography from "../../UI/Typography/Typography";
-import InputField from "../../UI/InputField/InputField";
-import Button from "../../UI/Button/Button";
+import upload from "../../assets/Icons/UploadOutlined.svg";
+import Typography from "../UI/Typography/Typography";
+import InputField from "../UI/InputField/InputField";
+import Button from "../UI/Button/Button";
 
 const BioForm = ({ setToggle }) => {
   return (

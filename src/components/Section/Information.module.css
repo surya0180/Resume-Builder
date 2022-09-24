@@ -1,0 +1,19 @@
+.container {
+  width: 60%;
+  margin: auto;
+  padding: 0.5em;
+}
+
+.add_new_btn {
+  width: 100%;
+  padding: 1em;
+  border-radius: 0.4em;
+  margin-top: 3em;
+  cursor: pointer;
+  background-color: white;
+  border: 1.5px solid var(--black);
+}
+
+.add_new_btn:hover {
+  opacity: 0.6;
+}
