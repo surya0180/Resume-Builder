@@ -1,8 +1,8 @@
 import React from 'react'
-import Button from '../Button/Button'
+import Button from '../../UI/Button/Button'
 import classes from './Header.module.css'
 import logo from '../../../assets/Icons/clipboardOutlined.svg'
-import Typography from '../Typography/Typography'
+import Typography from '../../UI/Typography/Typography'
 
 const Header = () => {
   return (

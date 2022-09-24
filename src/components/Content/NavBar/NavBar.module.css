@@ -1,0 +1,18 @@
+.nav_bar {
+    width: 100%;
+    border-bottom: 1px solid var(--darkGrey);
+    display: flex;
+    justify-content: center;
+}
+
+.nav_item {
+    padding: 1em;
+    margin: 0 0.8em;
+    color: var(--mediumBlack);
+    cursor: pointer;
+}
+
+.active {
+    color: var(--black);
+    border-bottom: 2px solid var(--black);
+}

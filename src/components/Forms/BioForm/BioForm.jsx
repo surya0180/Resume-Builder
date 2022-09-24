@@ -12,7 +12,7 @@ const BioForm = ({setToggle}) => {
         <div className={classes.avatar}>
             <div className={classes.avatar_input}>
               <img src={upload} alt={"upload"}/>
-              <label for="file-upload" className={classes.file_input_label}>
+              <label htmlFor="file-upload" className={classes.file_input_label}>
                   <Typography variant={'h6'}>Upload photo</Typography>
               </label>
               <input id="file-upload" type="file" className={classes.file_input_box}/>
