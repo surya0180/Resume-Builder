@@ -1,26 +1,23 @@
 import React, { useState } from "react";
 import Typography from "../UI/Typography/Typography";
-import classes from "./Information.module.css";
-import EduInfo from "../../data/education.json";
-import WorkExpInfo from "../../data/workExperiences.json";
-import AchvInfo from "../../data/achievements.json";
+import classes from "./Section.module.css";
 import Accordian from "../UI/Accordian/Accordian";
-import EducationForm from "../EducationForm";
 import WorkExperienceForm from "../WorkExperienceForm";
 import AchievementsForm from "../AchievementsForm";
+import EducationForm from "../EducationForm";
 
-const Section = ({ tabValue }) => {
-  console.log(tabValue);
+const Section = ({ eduInfo, workExpInfo, achvInfo, tabValue }) => {
+  console.log(eduInfo);
   const [isFormVisible, setIsFormVisible] = useState(false);
 
   const getData = () => {
     switch (tabValue) {
       case "education":
-        return EduInfo;
+        return eduInfo;
       case "workExperiences":
-        return WorkExpInfo;
+        return workExpInfo;
       case "achievements":
-        return AchvInfo;
+        return achvInfo;
       default:
         return [];
     }
@@ -36,11 +33,11 @@ const Section = ({ tabValue }) => {
   const showForm = () => {
     switch (tabValue) {
       case "education":
-        return <EducationForm closeForm={closeForm} />;
+        return <EducationForm method={"ADD"} closeForm={closeForm} />;
       case "workExperiences":
-        return <WorkExperienceForm closeForm={closeForm} />;
+        return <WorkExperienceForm method={"ADD"} closeForm={closeForm} />;
       case "achievements":
-        return <AchievementsForm closeForm={closeForm} />;
+        return <AchievementsForm method={"ADD"} closeForm={closeForm} />;
       default:
         return null;
     }

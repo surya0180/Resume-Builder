@@ -2,11 +2,11 @@ const initState = [];
 
 const achievementsReducer = (state = initState, action) => {
   switch (action.type) {
-    case "ADD":
+    case "ADD_ACHIEVEMENT":
       return;
-    case "UPDATE":
+    case "UPDATE_ACHIEVEMENT":
       return;
-    case "REMOVE":
+    case "REMOVE_ACHIEVEMENT":
       return;
     default:
       return state;

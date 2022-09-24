@@ -10,7 +10,7 @@ const AchievementsForm = ({ closeForm }) => {
       <form>
         <div className={classes.form_content}>
           <div className={classes.title}>
-            <Typography variant={"h2"}>Add new work experience</Typography>
+            <Typography variant={"h2"}>Add new achievement</Typography>
           </div>
           <div className={classes.input_1}>
             <InputField

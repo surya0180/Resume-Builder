@@ -1,6 +1,6 @@
 import React, { useState } from "react";
+import Section from "../components/Section";
 import Tabs from "../components/Tabs/Tabs";
-import Section from "../components/Section/Section";
 import { tabItems } from "../constants/tabItems";
 
 const InfoPage = () => {
@@ -8,7 +8,7 @@ const InfoPage = () => {
   return (
     <>
       <Tabs tabItems={tabItems} tabValue={tabValue} setTabValue={setTabValue} />
-      <Section tabValue={tabValue} />;
+      <Section tabValue={tabValue} />
     </>
   );
 };

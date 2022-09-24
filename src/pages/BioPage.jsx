@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import BioDetails from "../components/BioDetails/BioDetails";
+import BioDetails from "../components/BioDetails";
 import BioForm from "../components/BioForm";
 
 const BioPage = () => {

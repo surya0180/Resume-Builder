@@ -2,11 +2,11 @@ const initState = [];
 
 const workExperienceReducer = (state = initState, action) => {
   switch (action.type) {
-    case "ADD":
+    case "ADD_WORK_EXPERIENCE":
       return;
-    case "UPDATE":
+    case "UPDATE_WORK_EXPERIENCE":
       return;
-    case "REMOVE":
+    case "REMOVE_WORK_EXPERIENCE":
       return;
     default:
       return state;
