@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import classes from './Information.module.css'
 import Typography from '../../UI/Typography/Typography'
 import WorkExpInfo from '../../../utils/workExperience.json'
 import Button from '../../UI/Button/Button'
 import Accordian from '../../UI/Accordian/Accordian'
+import WorkExperienceForm from '../../Forms/WorkExperienceForm/WorkExperienceForm'
 
 const WorkExperiencesInfo = ({children, type}) => {
+  const [openForm, setOpenForm] = useState(false)
   return (
     <div className={classes.container}>
-        <button className={classes.add_new_btn}>
+        <button className={classes.add_new_btn} onClick={() => {
+          setOpenForm(open => !open)
+        }}>
             <Typography variant={'h3'}>Add new</Typography>
         </button>
+        {openForm && <WorkExperienceForm closeForm={setOpenForm} />}
         <div className={classes.info_cards}>
           {WorkExpInfo.map((obj, idx) => 
             <Accordian 

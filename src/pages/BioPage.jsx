@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import BioDetails from '../components/Content/BioDetails/BioDetails'
 import BioForm from '../components/Forms/BioForm/BioForm'
 
 const BioPage = () => {
@@ -9,7 +10,7 @@ const BioPage = () => {
             {!toggle && <BioForm setToggle={setToggle} />}
             {/* Bio Details */}
             {toggle && <>
-                
+                <BioDetails setToggle={setToggle}/>
             </>}
         </>
     )

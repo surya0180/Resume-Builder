@@ -4,7 +4,6 @@
 
 .input_box {
     border: 1px solid var(--darkGrey);
-    width: 100%;
     font-size: 1.2em;
     margin-top: 0.5em;
     padding: 0.5em;
@@ -19,4 +18,14 @@
 .input_label {
     font-size: 0.875em;
     font-weight: 600;
+}
+
+.input_box, .input_label {
+    display: block;
+}
+
+@media screen and (max-width: 1419px) {
+    .input_field {
+        width: 100%;
+    }
 }

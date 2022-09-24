@@ -19,14 +19,14 @@ const BioForm = ({setToggle}) => {
             </div>
         </div>
         <div className={classes.details}>
-          <InputField htmlFor={"name"} id={"name"} label={"Name"} type={"text"}/>
-          <InputField htmlFor={"email-id"} id={"email-id"} label={"Email-ID"} type={"email"}/>
-          <Button variant={"contained"} color={"teal"} type={'submit'}>
+          <InputField htmlFor={"name"} id={"name"} label={"Name"} type={"text"} width={'100%'}/>
+          <InputField htmlFor={"email-id"} id={"email-id"} label={"Email-ID"} type={"email"} width={'100%'}/>
+          <Button variant={"contained"} color={"teal"} type={'submit'} onClick={() => {setToggle(true)}}>
               <Typography variant={"h4"}>Save</Typography>
           </Button>
         </div>
         <div className={classes.bio_input}>
-          <InputField htmlFor={"bio"} id={"bio"} label={"Short Bio"} type={"textarea"}/>
+          <InputField htmlFor={"bio"} id={"bio"} label={"Short Bio"} type={"textarea"} width={'100%'}/>
         </div>
       </div>
     </form>

@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Typography from '../../UI/Typography/Typography'
 import classes from './Information.module.css'
 import EduInfo from '../../../utils/education.json' 
 import Accordian from '../../UI/Accordian/Accordian'
 import Button from '../../UI/Button/Button'
+import EducationForm from '../../Forms/EducationForm/EducationForm'
 
 const EducationInfo = ({children, type}) => {
+  const [openForm, setOpenForm] = useState(false)
   return (
     <div className={classes.container}>
-        <button className={classes.add_new_btn}>
+        <button className={classes.add_new_btn} onClick={() => {
+          setOpenForm(open => !open)
+        }}>
             <Typography variant={'h3'}>Add new</Typography>
         </button>
+        {openForm && <EducationForm closeForm={setOpenForm} />}
         <div className={classes.info_cards}>
           {EduInfo.map((obj, idx) => 
             <Accordian 
