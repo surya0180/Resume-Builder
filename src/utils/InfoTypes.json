@@ -1,17 +1,17 @@
 [
-    {
-        "id": 1,
-        "name": "Education",
-        "items": 2
-    },
-    {
-        "id": 2,
-        "name": "Work Experience",
-        "items": 2
-    },
-    {
-        "id": 1,
-        "name": "Achievements",
-        "items": 2
-    }
+  {
+    "id": 1,
+    "name": "Education",
+    "items": 2
+  },
+  {
+    "id": 2,
+    "name": "Work Experience",
+    "items": 2
+  },
+  {
+    "id": 1,
+    "name": "Achievements",
+    "items": 2
+  }
 ]

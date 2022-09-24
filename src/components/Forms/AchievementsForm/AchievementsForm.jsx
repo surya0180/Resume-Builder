@@ -5,7 +5,6 @@ import Typography from "../../UI/Typography/Typography";
 import classes from "./AchievementsForm.module.css";
 
 const AchievementsForm = ({ children, closeForm }) => {
-
   const closeFormHandler = () => {
     closeForm(false);
   };

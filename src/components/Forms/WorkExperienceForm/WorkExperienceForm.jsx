@@ -5,7 +5,6 @@ import Typography from "../../UI/Typography/Typography";
 import classes from "./WorkExperienceForm.module.css";
 
 const WorkExperienceForm = ({ children, closeForm }) => {
-
   const closeFormHandler = () => {
     closeForm(false);
   };

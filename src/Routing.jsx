@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Routing = () => {
-  return (
-    <div>Routing</div>
-  )
-}
+  return <div>Routing</div>;
+};
 
-export default Routing
+export default Routing;

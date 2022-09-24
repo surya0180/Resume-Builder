@@ -1,24 +1,24 @@
 .header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5em;
-    border-bottom: 1px solid var(--borderGrey);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5em;
+  border-bottom: 1px solid var(--borderGrey);
 }
 
 .title {
-    color: var(--blue);
-    display: flex;
-    align-items: center;
+  color: var(--blue);
+  display: flex;
+  align-items: center;
 }
 
 @media screen and (max-width: 480px) {
-    .header {
-        justify-content: center;
-    }
+  .header {
+    justify-content: center;
+  }
 
-    .title {
-        margin-bottom: 1em;
-    }
+  .title {
+    margin-bottom: 1em;
+  }
 }
