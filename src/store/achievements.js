@@ -5,6 +5,8 @@ const achievementsReducer = (state = initState, action) => {
   let newState = [...state];
 
   switch (action.type) {
+    case "IMPORT_ACHIEVEMENTS":
+      return data;
     case "ADD_ACHIEVEMENT":
       data.id = state.length + 1;
       state.push(data);
@@ -22,6 +24,15 @@ const achievementsReducer = (state = initState, action) => {
       return newState;
     case "REMOVE_ACHIEVEMENT":
       return newState.filter((achv) => achv.id !== data);
+    case "DRAG_DROP_ACHIEVEMENT":
+      console.log("I am here");
+      const src = data.source;
+      const des = data.destination;
+
+      let temp = newState[src.index];
+      newState.splice(src.index, 1);
+      newState.splice(des.index, 0, temp);
+      return newState;
     default:
       return state;
   }

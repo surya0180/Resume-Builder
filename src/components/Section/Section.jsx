@@ -5,6 +5,7 @@ import Accordian from "../UI/Accordian/Accordian";
 import AchievementsForm from "../AchievementsForm";
 import EducationForm from "../EducationForm";
 import WorkExperienceForm from "../WorkExperienceForm";
+import { Droppable } from "react-beautiful-dnd";
 
 const Section = ({
   eduInfo,
@@ -119,20 +120,29 @@ const Section = ({
       {isCreateFormVisible && showCreateForm()}
       {isEditFormVisible && showEditForm()}
 
-      <div className={classes.info_cards}>
-        {getData().map((item) => {
-          return (
-            <Accordian
-              id={item.id}
-              key={item.id}
-              tabValue={tabValue}
-              item={item}
-              deleteItem={deleteHandler}
-              showEditForm={openEditForm}
-            />
-          );
-        })}
-      </div>
+      <Droppable droppableId={tabValue}>
+        {(provided, snapshot) => (
+          <div
+            className={classes.info_cards}
+            ref={provided.innerRef}
+            {...provided.droppableProps}
+          >
+            {getData().map((item, idx) => {
+              return (
+                <Accordian
+                  id={item.id}
+                  key={item.id}
+                  index={idx}
+                  tabValue={tabValue}
+                  item={item}
+                  deleteItem={deleteHandler}
+                  showEditForm={openEditForm}
+                />
+              );
+            })}
+          </div>
+        )}
+      </Droppable>
     </div>
   );
 };

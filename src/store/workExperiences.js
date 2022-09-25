@@ -5,6 +5,8 @@ const workExperienceReducer = (state = initState, action) => {
   let newState = [...state];
 
   switch (action.type) {
+    case "IMPORT_WORK_EXPERIENCE":
+      return data;
     case "ADD_WORK_EXPERIENCE":
       data.id = state.length + 1;
       state.push(data);

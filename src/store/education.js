@@ -5,6 +5,8 @@ const educationReducer = (state = initState, action) => {
   let newState = [...state];
 
   switch (action.type) {
+    case "IMPORT_EDUCATION":
+      return data;
     case "ADD_EDUCATION":
       data.id = state.length + 1;
       state.push(data);
@@ -22,6 +24,15 @@ const educationReducer = (state = initState, action) => {
       return newState;
     case "REMOVE_EDUCATION":
       return newState.filter((edu) => edu.id !== data);
+    case "DRAG_DROP_EDUCATION":
+      console.log("I am here");
+      const src = data.source;
+      const des = data.destination;
+
+      let temp = newState[src.index];
+      newState.splice(src.index, 1);
+      newState.splice(des.index, 0, temp);
+      return newState;
     default:
       return state;
   }

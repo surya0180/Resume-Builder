@@ -17,3 +17,7 @@
 .add_new_btn:hover {
   opacity: 0.6;
 }
+
+.info_cards {
+  min-height: 20em;
+}

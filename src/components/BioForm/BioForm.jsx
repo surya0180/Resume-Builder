@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./BioForm.module.css";
 import upload from "../../assets/Icons/UploadOutlined.svg";
 import Typography from "../UI/Typography/Typography";
@@ -15,12 +15,14 @@ const BioForm = ({
   updateBio,
   setToggle,
 }) => {
-  const [formData, setFormData] = useState({
+  const initState = {
     profilePic: profilePic,
     name: name,
     email: email,
     shortBio: shortBio,
-  });
+  };
+
+  const [formData, setFormData] = useState(initState);
 
   const nameChangeHandler = (event) => {
     setFormData((prevState) => {

@@ -15,6 +15,13 @@ const bioReducer = (state = initState, action) => {
         email: data.email,
         shortBio: data.shortBio,
       };
+    case "IMPORT_BIO":
+      return {
+        profilePic: data.profilePic,
+        name: data.name,
+        email: data.email,
+        shortBio: data.shortBio,
+      };
     case "UPDATE_BIO":
       return {
         profilePic: data.profilePic,

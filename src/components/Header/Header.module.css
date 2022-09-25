@@ -13,6 +13,43 @@
   align-items: center;
 }
 
+.task {
+  display: flex;
+}
+
+.file_input_box {
+  display: none;
+}
+
+.import_label {
+    padding: 0.5em 0.7em;
+    border-radius: 0.4em;
+    margin: 0 2em 0 0;
+    cursor: pointer;
+    border: 1.4px solid var(--slowBlack);
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.import_label:hover {
+  opacity: 0.6;
+}
+
+.export_label {
+  padding: 0.5em 0.7em;
+  border-radius: 0.4em;
+  margin: 0 2em 0 0;
+  cursor: pointer;
+  border: 1.4px solid var(--red);
+  background-color: var(--red);
+  color: var(--white);
+  text-decoration: none;
+}
+
+.export_label:hover {
+opacity: 0.6;
+}
+
 @media screen and (max-width: 480px) {
   .header {
     justify-content: center;

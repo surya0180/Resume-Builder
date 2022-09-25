@@ -5,6 +5,7 @@ import arrowopen from "../../../assets/Icons/CaretDownFilled.svg";
 import arrowclose from "../../../assets/Icons/caretRightFilled.svg";
 import Typography from "../Typography/Typography";
 import { months } from "../../../constants/months";
+import { Draggable } from "react-beautiful-dnd";
 
 const getPeriod = (startDate, endDate) => {
   const startDateObject = new Date(startDate);
@@ -23,95 +24,105 @@ const getPeriod = (startDate, endDate) => {
   return period;
 };
 
-const Accordian = ({ tabValue, item, deleteItem, showEditForm }) => {
+const Accordian = ({ tabValue, item, index, deleteItem, showEditForm }) => {
   const [toggle, setToggle] = useState(false);
   const { id, title, subtitle, startDate, endDate, description } = item;
   const period = getPeriod(startDate, endDate);
 
+  console.log(`${id}-${tabValue}`, id);
   return (
-    <div className={classes.accordian}>
-      <button
-        className={classes.accordian_btn}
-        onClick={() => {
-          setToggle((prevState) => !prevState);
-        }}
-      >
-        <div className={classes.accordian_arrow}>
-          {toggle ? (
-            <img
-              src={arrowopen}
-              alt={"arrowopen"}
-              className={classes.accordian_arrow_open}
-            />
-          ) : (
-            <img
-              src={arrowclose}
-              alt={"arrowclose"}
-              className={classes.accordian_arrow_close}
-            />
-          )}
-        </div>
-        <div className={classes.accordian_btn_content}>
-          <Typography variant={"h3"}>{title}</Typography>
-          <div className={classes.accordian_period}>
-            <Typography variant={"subtitle"}>{period}</Typography>
+    <Draggable draggableId={`${id}-${tabValue}`} index={index} key={index}>
+      {(provided) => (
+        <div
+          className={classes.accordian}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          ref={provided.innerRef}
+        >
+          <div
+            className={classes.accordian_btn}
+            onClick={() => {
+              setToggle((prevState) => !prevState);
+            }}
+          >
+            <div className={classes.accordian_arrow}>
+              {toggle ? (
+                <img
+                  src={arrowopen}
+                  alt={"arrowopen"}
+                  className={classes.accordian_arrow_open}
+                />
+              ) : (
+                <img
+                  src={arrowclose}
+                  alt={"arrowclose"}
+                  className={classes.accordian_arrow_close}
+                />
+              )}
+            </div>
+            <div className={classes.accordian_btn_content}>
+              <Typography variant={"h3"}>{title}</Typography>
+              <div className={classes.accordian_period}>
+                <Typography variant={"subtitle"}>{period}</Typography>
+              </div>
+            </div>
           </div>
-        </div>
-      </button>
-      <div className={classes.accordian_content}>
-        {toggle && (
-          <div className={classes.info_card_body}>
-            {tabValue !== "achievements" && (
-              <div className={classes.info_1}>
-                <div className={classes.info_1_label}>
-                  <Typography variant={"h6"}>
-                    {tabValue === "education"
-                      ? "Degree"
-                      : tabValue === "workExperiences"
-                      ? "Role"
-                      : null}
-                  </Typography>
+          <div className={classes.accordian_content}>
+            {toggle && (
+              <div className={classes.info_card_body}>
+                {tabValue !== "achievements" && (
+                  <div className={classes.info_1}>
+                    <div className={classes.info_1_label}>
+                      <Typography variant={"h6"}>
+                        {tabValue === "education"
+                          ? "Degree"
+                          : tabValue === "workExperiences"
+                          ? "Role"
+                          : null}
+                      </Typography>
+                    </div>
+                    <Typography variant={"h4"} color={"slowBlack"}>
+                      {subtitle}
+                    </Typography>
+                  </div>
+                )}
+                <div className={classes.info_2}>
+                  <div className={classes.info_2_label}>
+                    <Typography variant={"h6"}>Description</Typography>
+                  </div>
+                  <Typography variant={"subtitle"}>{description}</Typography>
                 </div>
-                <Typography variant={"h4"} color={"slowBlack"}>
-                  {subtitle}
-                </Typography>
+                <div className={classes.info_card_opts}>
+                  <Button
+                    variant={"outlined"}
+                    color={"darkGrey"}
+                    onClick={() => {
+                      showEditForm(item);
+                    }}
+                  >
+                    <Typography variant={"h4"} color={"mediumBlack"}>
+                      Edit
+                    </Typography>
+                  </Button>
+
+                  <Button
+                    variant={"outlined"}
+                    color={"darkGrey"}
+                    onClick={() => {
+                      deleteItem(id);
+                    }}
+                  >
+                    <Typography variant={"h4"} color={"mediumBlack"}>
+                      Delete
+                    </Typography>
+                  </Button>
+                </div>
               </div>
             )}
-            <div className={classes.info_2}>
-              <div className={classes.info_2_label}>
-                <Typography variant={"h6"}>Description</Typography>
-              </div>
-              <Typography variant={"subtitle"}>{description}</Typography>
-            </div>
-            <div className={classes.info_card_opts}>
-              <Button
-                variant={"outlined"}
-                color={"darkGrey"}
-                onClick={() => {
-                  showEditForm(item);
-                }}
-              >
-                <Typography variant={"h4"} color={"mediumBlack"}>
-                  Edit
-                </Typography>
-              </Button>
-
-              <Button
-                variant={"outlined"}
-                color={"darkGrey"}
-                onClick={() => {
-                  deleteItem(id);
-                }}
-              >
-                <Typography variant={"h4"} color={"mediumBlack"}>
-                  Delete
-                </Typography>
-              </Button>
-            </div>
           </div>
-        )}
-      </div>
-    </div>
+        </div>
+      )}
+    </Draggable>
   );
 };
 
