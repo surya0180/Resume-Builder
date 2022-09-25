@@ -14,8 +14,8 @@ const InputField = ({
   width = "",
 }) => {
   return (
-    <div className={classes.input_field}>
-      <label htmlFor={htmlFor} id={id} className={classes.input_label}>
+    <div className={classes.inputField}>
+      <label htmlFor={htmlFor} id={id} className={classes.inputLabel}>
         {label}
       </label>
       {type !== "textarea" && (
@@ -23,7 +23,7 @@ const InputField = ({
           id={id}
           name={name}
           type={type}
-          className={classes.input_box}
+          className={classes.inputBox}
           style={{ width }}
           onChange={onChange}
           required={required}
@@ -35,7 +35,7 @@ const InputField = ({
           id={id}
           name={name}
           rows={6}
-          className={classes.input_box}
+          className={classes.inputBox}
           style={{ width }}
           onChange={onChange}
           required={required}
@@ -46,4 +46,4 @@ const InputField = ({
   );
 };
 
-export default InputField;
+export default React.memo(InputField);

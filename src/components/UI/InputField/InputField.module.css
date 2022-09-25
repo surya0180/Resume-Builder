@@ -1,8 +1,8 @@
-.input_field {
+.inputField {
   margin: 0.5em 0 1.2em 0;
 }
 
-.input_box {
+.inputBox {
   border: 1px solid var(--darkGrey);
   border-radius: 4px;
   font-size: 1.2em;
@@ -11,23 +11,23 @@
   resize: none;
 }
 
-.input_box:focus {
+.inputBox:focus {
   outline: none;
   border: 1px solid var(--borderGrey);
 }
 
-.input_label {
+.inputLabel {
   font-size: 0.875em;
   font-weight: 600;
 }
 
-.input_box,
-.input_label {
+.inputBox,
+.inputLabel {
   display: block;
 }
 
 @media screen and (max-width: 1419px) {
-  .input_field {
+  .inputField {
     width: 100%;
   }
 }

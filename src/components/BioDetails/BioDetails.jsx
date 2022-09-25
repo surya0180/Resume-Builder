@@ -49,4 +49,4 @@ const BioDetails = ({
   );
 };
 
-export default BioDetails;
+export default React.memo(BioDetails);

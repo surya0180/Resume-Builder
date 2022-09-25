@@ -64,4 +64,4 @@ const Typography = ({ children, variant, color = "" }) => {
   );
 };
 
-export default Typography;
+export default React.memo(Typography);

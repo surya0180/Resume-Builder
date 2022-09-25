@@ -24,4 +24,4 @@ const Tabs = ({ getData, tabItems, tabValue, setTabValue }) => {
   );
 };
 
-export default Tabs;
+export default React.memo(Tabs);

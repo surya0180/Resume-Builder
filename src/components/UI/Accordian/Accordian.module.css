@@ -3,7 +3,7 @@
   margin: 2em 0;
 }
 
-.accordian_btn {
+.accordianBtn {
   background-color: white;
   border: 1px solid var(--darkGrey);
   align-items: center;
@@ -17,66 +17,66 @@
   /* cursor: pointer; */
 }
 
-.accordian_btn:hover {
+.accordianBtn:hover {
   opacity: 0.6;
 }
 
-.accordian_btn_content {
+.accordianBtnContent {
   display: flex;
   width: 100%;
   justify-content: space-between;
 }
 
-.accordian_period {
+.accordianPeriod {
   color: var(--mediumBlack);
 }
 
-.accordian_content {
+.accordianContent {
 }
 
-.accordian_arrow {
+.accordianArrow {
   margin-right: 1em;
 }
 
-.accordian_arrow_open {
+.accordianArrowOpen {
 }
 
-.accordian_arrow_close {
+.accordianArrowClose {
 }
 
-.accordian_open {
+.accordianOpen {
 }
 
-.accordian_close {
+.accordianClose {
 }
 
-.info_cards {
+.infoCards {
   width: 100%;
 }
 
-.info_card_body {
+.infoCardBody {
   padding: 1em 2.5em;
   border: 1px solid var(--darkGrey);
   border-top: 0px;
 }
 
-.info_1 {
+.info1 {
   margin: 0.7em 0;
 }
 
-.info_2 {
+.info2 {
   margin: 0.7em 0;
 }
 
-.info_1_label {
+.info1Label {
   margin: 0.5em 0;
 }
 
-.info_2_label {
+.info2Label {
   margin: 1.5em 0 0.7em 0;
 }
 
-.info_card_opts {
+.infoCardOpts {
   display: flex;
   justify-content: flex-start;
   margin: 1.5em 0 1em 0;

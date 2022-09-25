@@ -38,39 +38,39 @@ const Accordian = ({ tabValue, item, index, deleteItem, showEditForm }) => {
           ref={provided.innerRef}
         >
           <div
-            className={classes.accordian_btn}
+            className={classes.accordianBtn}
             onClick={() => {
               setToggle((prevState) => !prevState);
             }}
           >
-            <div className={classes.accordian_arrow}>
+            <div className={classes.accordianArrow}>
               {toggle ? (
                 <img
                   src={arrowopen}
                   alt={"arrowopen"}
-                  className={classes.accordian_arrow_open}
+                  className={classes.accordianArrowOpen}
                 />
               ) : (
                 <img
                   src={arrowclose}
                   alt={"arrowclose"}
-                  className={classes.accordian_arrow_close}
+                  className={classes.accordianArrowClose}
                 />
               )}
             </div>
-            <div className={classes.accordian_btn_content}>
+            <div className={classes.accordianBtnContent}>
               <Typography variant={"h3"}>{title}</Typography>
-              <div className={classes.accordian_period}>
+              <div className={classes.accordianPeriod}>
                 <Typography variant={"subtitle"}>{period}</Typography>
               </div>
             </div>
           </div>
-          <div className={classes.accordian_content}>
+          <div className={classes.accordianContent}>
             {toggle && (
-              <div className={classes.info_card_body}>
+              <div className={classes.infoCardBody}>
                 {tabValue !== "achievements" && (
-                  <div className={classes.info_1}>
-                    <div className={classes.info_1_label}>
+                  <div className={classes.info1}>
+                    <div className={classes.info1Label}>
                       <Typography variant={"h6"}>
                         {tabValue === "education"
                           ? "Degree"
@@ -84,13 +84,13 @@ const Accordian = ({ tabValue, item, index, deleteItem, showEditForm }) => {
                     </Typography>
                   </div>
                 )}
-                <div className={classes.info_2}>
-                  <div className={classes.info_2_label}>
+                <div className={classes.info2}>
+                  <div className={classes.info2Label}>
                     <Typography variant={"h6"}>Description</Typography>
                   </div>
                   <Typography variant={"subtitle"}>{description}</Typography>
                 </div>
-                <div className={classes.info_card_opts}>
+                <div className={classes.infoCardOpts}>
                   <Button
                     variant={"outlined"}
                     color={"darkGrey"}
@@ -124,4 +124,4 @@ const Accordian = ({ tabValue, item, index, deleteItem, showEditForm }) => {
   );
 };
 
-export default Accordian;
+export default React.memo(Accordian);
