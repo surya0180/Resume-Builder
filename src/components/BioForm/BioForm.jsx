@@ -1,9 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classes from "./BioForm.module.css";
 import upload from "../../assets/Icons/UploadOutlined.svg";
 import Typography from "../UI/Typography/Typography";
 import InputField from "../UI/InputField/InputField";
 import Button from "../UI/Button/Button";
+
+const initState = {
+  profilePic: null,
+  name: "",
+  email: "",
+  shortBio: "",
+};
 
 const BioForm = ({
   profilePic,
@@ -15,14 +22,10 @@ const BioForm = ({
   updateBio,
   setToggle,
 }) => {
-  const initState = {
-    profilePic: profilePic,
-    name: name,
-    email: email,
-    shortBio: shortBio,
-  };
-
   const [formData, setFormData] = useState(initState);
+  useEffect(() => {
+    setFormData({ profilePic, name, email, shortBio });
+  }, [profilePic, name, email, shortBio]);
 
   const nameChangeHandler = (event) => {
     setFormData((prevState) => {
@@ -80,9 +83,9 @@ const BioForm = ({
             backgroundSize: "100%",
           }}
         >
-          <div className={classes.avatar_input}>
+          <div className={classes.avatarInput}>
             <img src={upload} alt={"upload"} />
-            <label htmlFor="file-upload" className={classes.file_input_label}>
+            <label htmlFor="file-upload" className={classes.fileInputLabel}>
               <Typography variant={"h6"}>Upload photo</Typography>
             </label>
             <input
@@ -90,7 +93,7 @@ const BioForm = ({
               type="file"
               accept="image/*"
               onChange={profilePicHandler}
-              className={classes.file_input_box}
+              className={classes.fileInputBox}
             />
           </div>
         </div>
@@ -119,7 +122,7 @@ const BioForm = ({
             <Typography variant={"h4"}>Save</Typography>
           </Button>
         </div>
-        <div className={classes.bio_input}>
+        <div className={classes.bioInput}>
           <InputField
             htmlFor={"bio"}
             id={"bio"}

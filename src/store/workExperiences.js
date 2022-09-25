@@ -2,18 +2,18 @@ const initState = [];
 
 const workExperienceReducer = (state = initState, action) => {
   const data = action.payload;
-  let newState = [...state];
+  const updatedState = [...state];
 
   switch (action.type) {
     case "IMPORT_WORK_EXPERIENCE":
       return data;
     case "ADD_WORK_EXPERIENCE":
-      data.id = state.length + 1;
-      state.push(data);
-      return state;
+      data.id = updatedState.length + 1;
+      updatedState.push(data);
+      return updatedState;
     case "UPDATE_WORK_EXPERIENCE":
       const index = state.findIndex((exp) => exp.id === data.id);
-      newState[index] = {
+      updatedState[index] = {
         id: data.id,
         title: data.title,
         subtitle: data.subtitle,
@@ -21,9 +21,9 @@ const workExperienceReducer = (state = initState, action) => {
         endDate: data.endDate,
         description: data.description,
       };
-      return newState;
+      return updatedState;
     case "REMOVE_WORK_EXPERIENCE":
-      return newState.filter((exp) => exp.id !== data);
+      return updatedState.filter((exp) => exp.id !== data);
     default:
       return state;
   }

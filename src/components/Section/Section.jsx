@@ -8,11 +8,8 @@ import WorkExperienceForm from "../WorkExperienceForm";
 import { Droppable } from "react-beautiful-dnd";
 
 const Section = ({
-  eduInfo,
-  workExpInfo,
-  achvInfo,
+  sectionData,
   tabValue,
-
   removeEducation,
   removeWorkExperience,
   removeAchievement,
@@ -20,19 +17,6 @@ const Section = ({
   const [isCreateFormVisible, setIsCreateFormVisible] = useState(false);
   const [isEditFormVisible, setIsEditFormVisible] = useState(false);
   const [item, setItem] = useState({});
-
-  const getData = () => {
-    switch (tabValue) {
-      case "education":
-        return eduInfo;
-      case "workExperiences":
-        return workExpInfo;
-      case "achievements":
-        return achvInfo;
-      default:
-        return [];
-    }
-  };
 
   const openCreateForm = () => {
     setIsCreateFormVisible(true);
@@ -113,7 +97,7 @@ const Section = ({
 
   return (
     <div className={classes.container}>
-      <button className={classes.add_new_btn} onClick={openCreateForm}>
+      <button className={classes.addNewBtn} onClick={openCreateForm}>
         <Typography variant={"h3"}>Add new</Typography>
       </button>
 
@@ -123,11 +107,11 @@ const Section = ({
       <Droppable droppableId={tabValue}>
         {(provided, snapshot) => (
           <div
-            className={classes.info_cards}
+            className={classes.infoCards}
             ref={provided.innerRef}
             {...provided.droppableProps}
           >
-            {getData().map((item, idx) => {
+            {sectionData.map((item, idx) => {
               return (
                 <Accordian
                   id={item.id}

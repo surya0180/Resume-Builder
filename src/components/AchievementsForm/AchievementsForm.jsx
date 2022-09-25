@@ -61,11 +61,11 @@ const AchievementsForm = ({
   return (
     <div className={classes.form}>
       <form onSubmit={submitHandler}>
-        <div className={classes.form_content}>
+        <div className={classes.formContent}>
           <div className={classes.title}>
             <Typography variant={"h2"}>Add new achievement</Typography>
           </div>
-          <div className={classes.input_1}>
+          <div className={classes.input1}>
             <InputField
               htmlFor={"title"}
               id={"title"}
@@ -78,7 +78,7 @@ const AchievementsForm = ({
               required={true}
             />
           </div>
-          <div className={classes.input_2}>
+          <div className={classes.input2}>
             <InputField
               htmlFor={"date"}
               id={"date"}
@@ -91,7 +91,7 @@ const AchievementsForm = ({
               width={"100%"}
             />
           </div>
-          <div className={classes.input_5}>
+          <div className={classes.input5}>
             <InputField
               htmlFor={"description"}
               id={"description"}

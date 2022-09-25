@@ -1,11 +1,11 @@
-.nav_bar {
+.tabs {
   width: 100%;
   border-bottom: 1px solid var(--darkGrey);
   display: flex;
   justify-content: center;
 }
 
-.nav_item {
+.tab {
   padding: 1em;
   margin: 0 0.8em;
   color: var(--mediumBlack);

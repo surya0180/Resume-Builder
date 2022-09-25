@@ -11,6 +11,10 @@ import {
 } from "../actions/dragNdropActions";
 
 const InfoPage = ({
+  eduInfo,
+  workExpInfo,
+  achvInfo,
+
   dragNdropEducation,
   dragNdropWorkExperiences,
   dragNdropAchievements,
@@ -41,14 +45,42 @@ const InfoPage = ({
     }
   };
 
+  const getData = (key) => {
+    switch (key) {
+      case "education":
+        return eduInfo;
+      case "workExperiences":
+        return workExpInfo;
+      case "achievements":
+        return achvInfo;
+      default:
+        return [];
+    }
+  };
+
+  const sectionData = getData(tabValue);
+
   return (
     <>
-      <Tabs tabItems={tabItems} tabValue={tabValue} setTabValue={setTabValue} />
+      <Tabs
+        tabItems={tabItems}
+        tabValue={tabValue}
+        setTabValue={setTabValue}
+        getData={getData}
+      />
       <DragDropContext onDragEnd={onDragEnd}>
-        <Section tabValue={tabValue} />
+        <Section tabValue={tabValue} sectionData={sectionData} />
       </DragDropContext>
     </>
   );
+};
+
+const mapStateToProps = (state) => {
+  return {
+    eduInfo: state.education,
+    workExpInfo: state.workExperiences,
+    achvInfo: state.achievements,
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
@@ -65,4 +97,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(null, mapDispatchToProps)(InfoPage);
+export default connect(mapStateToProps, mapDispatchToProps)(InfoPage);

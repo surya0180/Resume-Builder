@@ -79,11 +79,11 @@ const EducationForm = ({
   return (
     <div className={classes.form}>
       <form onSubmit={submitHandler}>
-        <div className={classes.form_content}>
+        <div className={classes.formContent}>
           <div className={classes.title}>
             <Typography variant={"h2"}>Add new education</Typography>
           </div>
-          <div className={classes.input_1}>
+          <div className={classes.input1}>
             <InputField
               htmlFor={"institute"}
               id={"institute"}
@@ -96,7 +96,7 @@ const EducationForm = ({
               required={true}
             />
           </div>
-          <div className={classes.input_2}>
+          <div className={classes.input2}>
             <InputField
               htmlFor={"degree"}
               id={"degree"}
@@ -109,7 +109,7 @@ const EducationForm = ({
               required={true}
             />
           </div>
-          <div className={classes.input_34}>
+          <div className={classes.input34}>
             <InputField
               htmlFor={"startDate"}
               id={"startDate"}
@@ -133,7 +133,7 @@ const EducationForm = ({
               required={true}
             />
           </div>
-          <div className={classes.input_5}>
+          <div className={classes.input5}>
             <InputField
               htmlFor={"description"}
               id={"description"}

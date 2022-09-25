@@ -3,7 +3,8 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5em;
+  padding: 1.2em 1.5em;
+  padding-right: 0.5em;
   border-bottom: 1px solid var(--borderGrey);
 }
 
@@ -17,11 +18,11 @@
   display: flex;
 }
 
-.file_input_box {
+.fileInputBox {
   display: none;
 }
 
-.import_label {
+.importLabel {
     padding: 0.5em 0.8em;
     border-radius: 0.4em;
     margin: 0 2em 0 0;
@@ -31,11 +32,11 @@
     color: var(--black);
 }
 
-.import_label:hover {
+.importLabel:hover {
   opacity: 0.6;
 }
 
-.export_label {
+.exportLabel {
   padding: 0.5em 0.8em;
   border-radius: 0.4em;
   margin: 0 2em 0 0;
@@ -46,7 +47,7 @@
   text-decoration: none;
 }
 
-.export_label:hover {
+.exportLabel:hover {
 opacity: 0.6;
 }
 

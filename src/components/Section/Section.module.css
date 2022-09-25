@@ -4,7 +4,7 @@
   padding: 0.5em;
 }
 
-.add_new_btn {
+.addNewBtn {
   width: 100%;
   padding: 1em;
   border-radius: 0.4em;
@@ -14,10 +14,10 @@
   border: 1.5px solid var(--black);
 }
 
-.add_new_btn:hover {
+.addNewBtn:hover {
   opacity: 0.6;
 }
 
-.info_cards {
+.infoCards {
   min-height: 20em;
 }

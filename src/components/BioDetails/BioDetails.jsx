@@ -13,7 +13,7 @@ const BioDetails = ({
   setToggle,
 }) => {
   return (
-    <div className={classes.bio_details}>
+    <div className={classes.bioDetails}>
       <div
         className={classes.avatar}
         style={{
@@ -30,7 +30,7 @@ const BioDetails = ({
             {email}
           </Typography>
         </div>
-        <div className={classes.short_bio}>
+        <div className={classes.shortBio}>
           <Typography variant={"subtitle"}>{shortBio}</Typography>
         </div>
         <Button

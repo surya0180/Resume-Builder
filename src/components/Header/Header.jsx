@@ -46,7 +46,7 @@ const Header = ({
         <Typography variant={"h1"}>Resume Builder</Typography>
       </div>
       <div className={classes.task}>
-        <label htmlFor={"json-upload"} className={classes.import_label}>
+        <label htmlFor={"json-upload"} className={classes.importLabel}>
           <Typography variant={"h4"}>Import</Typography>
         </label>
         <input
@@ -55,12 +55,12 @@ const Header = ({
           accept=".json"
           value={file}
           onChange={importHandler}
-          className={classes.file_input_box}
+          className={classes.fileInputBox}
         />
         <a
           id="exportResume"
           href="d"
-          className={classes.export_label}
+          className={classes.exportLabel}
           onClick={(event) => {
             exportResume({ bio, education, workExperiences, achievements });
           }}
