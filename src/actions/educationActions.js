@@ -10,9 +10,9 @@ export const updateEducation = (education) => {
     payload: education,
   };
 };
-export const deleteEducation = (id) => {
+export const removeEducation = (id) => {
   return {
-    type: "DELETE_EDUCATION",
+    type: "REMOVE_EDUCATION",
     payload: id,
   };
 };

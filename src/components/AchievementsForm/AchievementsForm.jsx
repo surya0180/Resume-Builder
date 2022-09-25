@@ -1,13 +1,66 @@
-import React from "react";
+import React, { useState } from "react";
 import Button from "../UI/Button/Button";
 import InputField from "../UI/InputField/InputField";
 import Typography from "../UI/Typography/Typography";
 import classes from "./AchievementsForm.module.css";
 
-const AchievementsForm = ({ closeForm }) => {
+const AchievementsForm = ({
+  item,
+  method,
+
+  addAchievement,
+  updateAchievement,
+  closeForm,
+}) => {
+  const initState = item
+    ? {
+        id: item.id,
+        title: item.title,
+        startDate: item.startDate,
+        description: item.description,
+      }
+    : {
+        id: 1,
+        title: "",
+        startDate: "",
+        description: "",
+      };
+  const [formData, setFormData] = useState(initState);
+
+  const titleHandler = (event) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      title: event.target.value,
+    }));
+  };
+
+  const startDateHandler = (event) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      startDate: event.target.value,
+    }));
+  };
+
+  const descriptionHandler = (event) => {
+    setFormData((prevState) => ({
+      ...prevState,
+      description: event.target.value,
+    }));
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    if (method === "ADD") {
+      addAchievement(formData);
+    } else if (method === "UPDATE") {
+      updateAchievement(formData);
+    }
+    closeForm();
+  };
+
   return (
     <div className={classes.form}>
-      <form>
+      <form onSubmit={submitHandler}>
         <div className={classes.form_content}>
           <div className={classes.title}>
             <Typography variant={"h2"}>Add new achievement</Typography>
@@ -20,6 +73,9 @@ const AchievementsForm = ({ closeForm }) => {
               label={"Title"}
               type={"text"}
               width={"100%"}
+              value={formData.title}
+              onChange={titleHandler}
+              required={true}
             />
           </div>
           <div className={classes.input_2}>
@@ -29,6 +85,9 @@ const AchievementsForm = ({ closeForm }) => {
               name={"date"}
               label={"Date"}
               type={"datetime-local"}
+              value={formData.startDate}
+              onChange={startDateHandler}
+              required={true}
               width={"100%"}
             />
           </div>
@@ -38,12 +97,15 @@ const AchievementsForm = ({ closeForm }) => {
               id={"description"}
               name={"description"}
               label={"Description"}
-              type={"text"}
+              type={"textarea"}
+              value={formData.description}
+              onChange={descriptionHandler}
+              required={true}
               width={"100%"}
             />
           </div>
           <div className={classes.submit}>
-            <Button variant={"contained"} color={"teal"}>
+            <Button variant={"contained"} color={"teal"} type={"submit"}>
               <Typography variant={"h4"} color={"white"}>
                 Save
               </Typography>

@@ -12,7 +12,6 @@ const BioDetails = ({
   updateBio,
   setToggle,
 }) => {
-  console.log(profilePic);
   return (
     <div className={classes.bio_details}>
       <div

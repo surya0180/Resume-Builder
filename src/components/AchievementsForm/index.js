@@ -1,6 +1,19 @@
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
+import {
+  addAchievement,
+  updateAchievement,
+} from "../../actions/achievementActions";
 import AchievementsForm from "./AchievementsForm";
 
-// matchStateToProps
+const mapDispatchToProps = (dispatch) => {
+  return {
+    addAchievement: (achv) => {
+      dispatch(addAchievement(achv));
+    },
+    updateAchievement: (achv) => {
+      dispatch(updateAchievement(achv));
+    },
+  };
+};
 
-export default AchievementsForm;
+export default connect(null, mapDispatchToProps)(AchievementsForm);

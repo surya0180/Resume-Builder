@@ -23,7 +23,6 @@ const BioForm = ({
   });
 
   const nameChangeHandler = (event) => {
-    console.log(event.target.value);
     setFormData((prevState) => {
       return {
         ...prevState,

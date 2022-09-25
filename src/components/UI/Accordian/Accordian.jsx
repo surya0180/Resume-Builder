@@ -5,9 +5,9 @@ import arrowopen from "../../../assets/Icons/CaretDownFilled.svg";
 import arrowclose from "../../../assets/Icons/caretRightFilled.svg";
 import Typography from "../Typography/Typography";
 
-const Accordian = ({ tabValue, item }) => {
+const Accordian = ({ tabValue, item, deleteItem, showEditForm }) => {
   const [toggle, setToggle] = useState(false);
-  const { title, subtitle, startDate, endDate, description } = item;
+  const { id, title, subtitle, startDate, endDate, description } = item;
   const period = startDate.concat(endDate ? `\t-\t${endDate}` : "");
 
   return (
@@ -66,13 +66,25 @@ const Accordian = ({ tabValue, item }) => {
               <Typography variant={"subtitle"}>{description}</Typography>
             </div>
             <div className={classes.info_card_opts}>
-              <Button variant={"outlined"} color={"darkGrey"}>
+              <Button
+                variant={"outlined"}
+                color={"darkGrey"}
+                onClick={() => {
+                  showEditForm(item);
+                }}
+              >
                 <Typography variant={"h4"} color={"mediumBlack"}>
                   Edit
                 </Typography>
               </Button>
 
-              <Button variant={"outlined"} color={"darkGrey"}>
+              <Button
+                variant={"outlined"}
+                color={"darkGrey"}
+                onClick={() => {
+                  deleteItem(id);
+                }}
+              >
                 <Typography variant={"h4"} color={"mediumBlack"}>
                   Delete
                 </Typography>

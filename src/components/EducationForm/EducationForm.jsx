@@ -5,26 +5,31 @@ import Typography from "../UI/Typography/Typography";
 import classes from "./EducationForm.module.css";
 
 const EducationForm = ({
-  id,
-  title,
-  subtitle,
-  startDate,
-  endDate,
-  description,
+  item,
   method,
 
   addEducation,
   updateEducation,
   closeForm,
 }) => {
-  const [formData, setFormData] = useState({
-    id: id,
-    title: title,
-    subtitle: subtitle,
-    startDate: startDate,
-    endDate: endDate,
-    description: description,
-  });
+  const initState = item
+    ? {
+        id: item.id,
+        title: item.title,
+        subtitle: item.subtitle,
+        startDate: item.startDate,
+        endDate: item.endDate,
+        description: item.description,
+      }
+    : {
+        id: 1,
+        title: "",
+        subtitle: "",
+        startDate: "",
+        endDate: "",
+        description: "",
+      };
+  const [formData, setFormData] = useState(initState);
 
   const titleHandler = (event) => {
     setFormData((prevState) => ({
@@ -88,6 +93,7 @@ const EducationForm = ({
               value={formData.title}
               onChange={titleHandler}
               width={"100%"}
+              required={true}
             />
           </div>
           <div className={classes.input_2}>
@@ -100,6 +106,7 @@ const EducationForm = ({
               value={formData.subtitle}
               onChange={subtitleHandler}
               width={"100%"}
+              required={true}
             />
           </div>
           <div className={classes.input_34}>
@@ -112,6 +119,7 @@ const EducationForm = ({
               value={formData.startDate}
               onChange={startDateHandler}
               width={"100%"}
+              required={true}
             />
             <InputField
               htmlFor={"endDate"}
@@ -122,6 +130,7 @@ const EducationForm = ({
               value={formData.endDate}
               onChange={endDateHandler}
               width={"100%"}
+              required={true}
             />
           </div>
           <div className={classes.input_5}>
@@ -134,6 +143,7 @@ const EducationForm = ({
               value={formData.description}
               onChange={descriptionHandler}
               width={"100%"}
+              required={true}
             />
           </div>
           <div className={classes.submit}>
