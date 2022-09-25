@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Section from "../components/Section";
-import Tabs from "../components/Tabs/Tabs";
+import Tabs from "../components/Tabs";
 import { tabItems } from "../constants/tabItems";
 
 const InfoPage = () => {

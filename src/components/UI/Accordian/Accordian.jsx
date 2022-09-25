@@ -4,11 +4,29 @@ import classes from "./Accordian.module.css";
 import arrowopen from "../../../assets/Icons/CaretDownFilled.svg";
 import arrowclose from "../../../assets/Icons/caretRightFilled.svg";
 import Typography from "../Typography/Typography";
+import { months } from "../../../constants/months";
+
+const getPeriod = (startDate, endDate) => {
+  const startDateObject = new Date(startDate);
+  console.log(startDateObject.getMonth());
+  const startPeriod =
+    months[startDateObject.getMonth()] + " " + startDateObject.getFullYear();
+
+  if (!endDate) {
+    return startPeriod;
+  }
+  const endDateObject = new Date(endDate);
+  const endPeriod =
+    months[endDateObject.getMonth()] + " " + endDateObject.getFullYear();
+
+  const period = startPeriod + "\t - \t" + endPeriod;
+  return period;
+};
 
 const Accordian = ({ tabValue, item, deleteItem, showEditForm }) => {
   const [toggle, setToggle] = useState(false);
   const { id, title, subtitle, startDate, endDate, description } = item;
-  const period = startDate.concat(endDate ? `\t-\t${endDate}` : "");
+  const period = getPeriod(startDate, endDate);
 
   return (
     <div className={classes.accordian}>
