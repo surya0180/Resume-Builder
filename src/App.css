@@ -15,6 +15,10 @@ body {
   font-size: 1em;
 }
 
+textarea {
+  font-family: "Avenir-Next";
+}
+
 :root {
   --black: #222222;
   --slowBlack: #2b2b2b;

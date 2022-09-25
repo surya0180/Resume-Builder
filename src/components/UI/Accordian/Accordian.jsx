@@ -9,7 +9,6 @@ import { Draggable } from "react-beautiful-dnd";
 
 const getPeriod = (startDate, endDate) => {
   const startDateObject = new Date(startDate);
-  console.log(startDateObject.getMonth());
   const startPeriod =
     months[startDateObject.getMonth()] + " " + startDateObject.getFullYear();
 
@@ -29,7 +28,6 @@ const Accordian = ({ tabValue, item, index, deleteItem, showEditForm }) => {
   const { id, title, subtitle, startDate, endDate, description } = item;
   const period = getPeriod(startDate, endDate);
 
-  console.log(`${id}-${tabValue}`, id);
   return (
     <Draggable draggableId={`${id}-${tabValue}`} index={index} key={index}>
       {(provided) => (

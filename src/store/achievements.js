@@ -25,7 +25,6 @@ const achievementsReducer = (state = initState, action) => {
     case "REMOVE_ACHIEVEMENT":
       return newState.filter((achv) => achv.id !== data);
     case "DRAG_DROP_ACHIEVEMENT":
-      console.log("I am here");
       const src = data.source;
       const des = data.destination;
 

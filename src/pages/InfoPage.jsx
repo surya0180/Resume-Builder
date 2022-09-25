@@ -60,7 +60,6 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(dragNdropWorkExperiencesAction(source, destination));
     },
     dragNdropAchievements: (source, destination) => {
-      console.log("This is m");
       dispatch(dragNdropAchievementsAction(source, destination));
     },
   };

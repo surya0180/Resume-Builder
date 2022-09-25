@@ -22,7 +22,7 @@
 }
 
 .import_label {
-    padding: 0.5em 0.7em;
+    padding: 0.5em 0.8em;
     border-radius: 0.4em;
     margin: 0 2em 0 0;
     cursor: pointer;
@@ -36,7 +36,7 @@
 }
 
 .export_label {
-  padding: 0.5em 0.7em;
+  padding: 0.5em 0.8em;
   border-radius: 0.4em;
   margin: 0 2em 0 0;
   cursor: pointer;

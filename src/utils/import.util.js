@@ -3,8 +3,6 @@ const loadBio = (bio) => {
   resumeBio.name = !bio.name ? "" : bio.name;
   resumeBio.email = !bio.email ? "" : bio.email;
   resumeBio.shortBio = !bio.shortBio ? "" : bio.shortBio;
-
-  console.log(bio);
   return resumeBio;
 };
 
@@ -32,7 +30,6 @@ const loadEducation = (education) => {
     resume.push(newItem);
   }
 
-  console.log(resume);
   return resume;
 };
 
@@ -60,7 +57,6 @@ const loadWorkExperiences = (workExperiences) => {
     resume.push(newItem);
   }
 
-  console.log(resume);
   return resume;
 };
 
@@ -83,7 +79,6 @@ const loadAchievements = (achievements) => {
     resume.push(newItem);
   }
 
-  console.log(resume);
   return resume;
 };
 

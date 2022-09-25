@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import classes from "./BioForm.module.css";
 import upload from "../../assets/Icons/UploadOutlined.svg";
 import Typography from "../UI/Typography/Typography";

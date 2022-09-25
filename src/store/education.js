@@ -25,7 +25,6 @@ const educationReducer = (state = initState, action) => {
     case "REMOVE_EDUCATION":
       return newState.filter((edu) => edu.id !== data);
     case "DRAG_DROP_EDUCATION":
-      console.log("I am here");
       const src = data.source;
       const des = data.destination;
 
